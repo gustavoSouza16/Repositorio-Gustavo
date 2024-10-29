@@ -1,9 +1,10 @@
 #2°Ano Vespertino - Informática, Programação Orientada a Objetos
 #Integrantes: Gabriel Lima Rosa, Gustavo Neves, Luiz Guilherme, Wellington Pereira
-from classees import*
+from ClasseAluno import*
+from ClasseProfessor import*
+from ClasseUsuario import*
 from dicionario import*
 from instancias import*
-
 
 while True:
   print("-" * 12, "MENU DO SAP", "-" * 12)
