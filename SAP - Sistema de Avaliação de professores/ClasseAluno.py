@@ -45,6 +45,6 @@ class Aluno(UsuarioIfro):
 
 #escrever método escrever depois
 
-    def escreverAvaliação(self):
-
-        pass
+    def escreverAvaliacao(self):
+        avalicacao_escrita = input("Escreva sua avaliação\n> ")
+        return avalicacao_escrita
