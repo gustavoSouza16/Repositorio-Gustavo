@@ -21,7 +21,7 @@ def get_horaAvaliacao(self):
     return self.horaAvaliacao
 
 def get_remetenteAvaliacao(self):
-    return self.remetenteAvaliacao
+    return self.remetenteAvaliacao.get_nome()
 
 def get_destinatarioAvaliacao(self):
     return self.destinatarioAvaliacao
