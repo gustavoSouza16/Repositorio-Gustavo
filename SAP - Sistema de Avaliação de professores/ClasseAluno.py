@@ -47,4 +47,5 @@ class Aluno(UsuarioIfro):
 
     def escreverAvaliacao(self):
         avalicacao_escrita = input("Escreva sua avaliação\n> ")
-        return avalicacao_escrita
+        dataehora = datetime.now()
+        return avalicacao_escrita, dataehora
