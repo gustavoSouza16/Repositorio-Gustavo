@@ -6,8 +6,8 @@ class Mural:
         self.avaliacoesAprovados = avaliacoesAprovados
 
 #metodos
-    def adicionarAvaliacao(self):
-        pass
+    def adicionarAvaliacao(self, Avaliacao):
+        self.avaliacoesAprovados.append(Avaliacao)
 
     def removerAvaliacao(self, idAvaliacao):
         pass
