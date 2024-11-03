@@ -36,6 +36,16 @@ while True:
       login_usuario = input("Coloque seu usuário para login:")
       login_senha = input("Coloque sua senha para login:")
       logar(login_usuario, login_senha,dicionario_de_usuario_alunos_cadastrados)
+      opcao_escrever = input("[1] Escrever Avaliação de professor\n[2] Retornar ao menu")
+
+      if opcao_escrever == "1":
+        usuario = dicionario_de_usuario_alunos_cadastrados[login_usuario]
+        Aluno_logado = Aluno (usuario[0],usuario[1],usuario[2],usuario[3],usuario[4],usuario[5])
+        remetente = Aluno_logado
+        conteudo = Aluno_logado.escreverAvaliacao()
+        avaliacao = Avaliacao("133333", conteudo , "dataAvaliacao", "horaAvaliacao", remetente, "destinatarioAvaliacao", "respostaAvaliacao")
+        print (avaliacao.get_conteudoAvaliacao())
+        print (avaliacao.get_remetenteAvaliacao())
 
     elif tipo_usuario == "2":
       login_usuario = input("Coloque seu usuário para login:")
