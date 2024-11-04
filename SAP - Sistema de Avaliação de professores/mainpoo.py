@@ -42,11 +42,19 @@ while True:
       if opcao_escrever == "1":
         usuario = dicionario_de_usuario_alunos_cadastrados[login_usuario]
         Aluno_logado = Aluno (usuario[0],usuario[1],usuario[2],usuario[3],usuario[4],usuario[5])
-        conteudo = Aluno_logado.escreverAvaliacao()
-        avaliacao = Avaliacao("133333", conteudo , "dataAvaliacao", conteudo, Aluno_logado, "destinatarioAvaliacao", "respostaAvaliacao")
-        
-        mural.adicionarAvaliacao(avaliacao)
+        conteudo = Aluno_logado.escreverAvaliacao()                                                            
+        avaliacao = Avaliacao(0, conteudo , conteudo, Aluno_logado, 0)                                           #Associação     
+        mural.adicionarAvaliacao(avaliacao)                                                                      #Agregação
         mural.consultarAvaliacao()
+        nome_profs = [valor[0] for valor in dicionario_de_profs_cadastrados.values()]
+        print (nome_profs)
+        DadoProfessor = input("Por favor, coloque o nome do professor a quem deseja avaliar")  #OBS: INVERTER POSIÇÕES, PARA PERGUNTAR A QUE PROF DESEJA ENVIAR PRIMEIRO E DEPOIS AVALIAR
+        if DadoProfessor not in nome_profs:
+          print ("Coloque uma resposta válida")
+          continue
+        else:
+          avaliacao = Avaliacao(0, conteudo , conteudo, Aluno_logado, DadoProfessor)
+          print("Sua avaliação está completa")
 
     elif tipo_usuario == "2":
       login_usuario = input("Coloque seu usuário para login:")
