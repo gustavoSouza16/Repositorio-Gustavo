@@ -12,7 +12,10 @@ class Mural:
     def removerAvaliacao(self, idAvaliacao):
         pass
     def consultarAvaliacao(self):
-        pass
+        print("*"*10)
+        for avaliacao in self.avaliacoesAprovados:
+            print (avaliacao.get_conteudoAvaliacao())
+        print("*"*10)
 
     def consultarDescricao(self):
         pass
