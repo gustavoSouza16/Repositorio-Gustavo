@@ -5,6 +5,7 @@ from ClasseProfessor import*
 from ClasseUsuario import*
 from dicionario import*
 from instancias import*
+mural = Mural()
 
 while True:
   print("-" * 12, "MENU DO SAP", "-" * 12)
@@ -41,11 +42,11 @@ while True:
       if opcao_escrever == "1":
         usuario = dicionario_de_usuario_alunos_cadastrados[login_usuario]
         Aluno_logado = Aluno (usuario[0],usuario[1],usuario[2],usuario[3],usuario[4],usuario[5])
-        remetente = Aluno_logado
         conteudo = Aluno_logado.escreverAvaliacao()
-        avaliacao = Avaliacao("133333", conteudo , "dataAvaliacao", "horaAvaliacao", remetente, "destinatarioAvaliacao", "respostaAvaliacao")
-        print (avaliacao.get_conteudoAvaliacao())
-        print (avaliacao.get_remetenteAvaliacao())
+        avaliacao = Avaliacao("133333", conteudo , "dataAvaliacao", conteudo, Aluno_logado, "destinatarioAvaliacao", "respostaAvaliacao")
+        
+        mural.adicionarAvaliacao(avaliacao)
+        mural.consultarAvaliacao()
 
     elif tipo_usuario == "2":
       login_usuario = input("Coloque seu usuário para login:")
