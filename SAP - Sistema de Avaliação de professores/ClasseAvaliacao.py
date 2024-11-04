@@ -1,12 +1,11 @@
 class Avaliacao:
-    def __init__(self, idAvaliacao, conteudoAvaliacao, dataAvaliacao, horaAvaliacao, remetenteAvaliacao, destinatarioAvaliacao, respostaAvaliacao):
+    def __init__(self, idAvaliacao, conteudoAvaliacao, dataehoraAvaliacao, remetenteAvaliacao, destinatarioAvaliacao):
         self.idAvaliacao = idAvaliacao
         self.conteudoAvaliacao = conteudoAvaliacao
-        self.dataAvaliacao = dataAvaliacao
-        self.horaAvaliacao = horaAvaliacao
+        self.dataehoraAvaliacao = dataehoraAvaliacao
         self.remetenteAvaliacao = remetenteAvaliacao
         self.destinatarioAvaliacao = destinatarioAvaliacao
-        self.respostaAvaliacao = respostaAvaliacao
+        self.respostaAvaliacao = None
 
 def get_idAvaliacao(self):
     return self.idAvaliacao
