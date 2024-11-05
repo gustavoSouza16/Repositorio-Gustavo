@@ -18,4 +18,4 @@ class Mural:
         print("*"*10)
 
     def consultarDescricao(self):
-        pass
+        print("O mural é o local onde o usuário pode inserir suas avaliações feitas para um docente de sua instituição e ver outras avaliações realizadas por outros discentes.")

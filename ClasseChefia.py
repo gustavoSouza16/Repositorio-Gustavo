@@ -8,7 +8,7 @@ from random import *
 
 class ChefiaImediata(UsuarioIfro):
     def __init__(self, nome, idade, login_usuario,login_senha, idChefia, email):
-        super().__init__(self, nome, idade, login_senha, login_usuario)
+        super().__init__(nome, idade, login_senha, login_usuario)
         self.idChefia = idChefia
         self.email = email
         self.Avaliacao = None
@@ -32,9 +32,9 @@ class ChefiaImediata(UsuarioIfro):
         pass
 
     def cadastrar(self):
-     self.nome = input("Digite seu nome: ")
-     self.idade = int(input("Digite sua idade:"))
-     self._login_usuario = input("Cadastre um usuário: ")
-     self._login_senha = input("Cadastre uma senha: ")
-     self.idChefia = print(randint(100, 300))
-     self.disciplina_ministrada = input("Digite seu email: ")
+        self.nome = input("Digite seu nome: ")
+        self.idade = int(input("Digite sua idade:"))
+        self._login_usuario = input("Cadastre um usuário: ")
+        self._login_senha = input("Cadastre uma senha: ")
+        self.idChefia = print(randint(100, 300))
+        self.disciplina_ministrada = input("Digite seu email: ")
