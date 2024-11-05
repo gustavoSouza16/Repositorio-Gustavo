@@ -60,8 +60,10 @@ class Avaliacao:
         Hora = datetime.hour
         self.idAvaliacao = randint(100, 300) #Gera um número aleatório para o id
         listaNum.append(self.idAvaliacao) #Adiciona esse numero na lista
+        print(f"Seu id é: {self.idAvaliacao}")
         if self.idAvaliacao in listaNum: #Se ja tiver na lista o programa refaz o id (esperokk)
             self.idAvaliacao = randint(100, 300)
+            return print(f"Seu id é: {self.idAvaliacao}")
             listaNum.append(self.idAvaliacao) # Adiciona o novo id na lista || ou usar o set_idAvaliacao kk
         self.conteudoAvaliacao = input("(Limite de 300 palavras!)\nFaça sua avaliação para o docente desejado:\n-").strip #Limite pra n extrapolar a quanitdade de caracteres
         if len(self.conteudoAvaliacao) > 300:
