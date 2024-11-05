@@ -1,6 +1,7 @@
 from ClasseUsuario import*
 from random import *
 
+
 class ChefiaImediata(UsuarioIfro):
     def __init__(self, nome, idade, login_usuario,login_senha, idChefia, email):
         super().__init__(nome, idade, login_usuario,login_senha)
