@@ -54,4 +54,3 @@ class Avaliacao:
         if self.status == None:
             print ("A avaliação ainda não foi revisado.\nStatus: Em Andamento")
         print (f"Status da avaliação: {self.status}")
-
