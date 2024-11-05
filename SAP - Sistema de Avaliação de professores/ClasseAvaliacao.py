@@ -51,4 +51,7 @@ class Avaliacao:
         Avaliacao(dAvaliacao, conteudoAvaliacao, dataAvaliacao, horaAvaliacao, remetenteAvaliacao, destinatarioAvaliacao, respostaAvaliacao)
 
     def consultarStatus(self):
-        pass
+        if self.status == None:
+            print ("A avaliação ainda não foi revisado.\nStatus: Em Andamento")
+        print (f"Status da avaliação: {self.status}")
+
