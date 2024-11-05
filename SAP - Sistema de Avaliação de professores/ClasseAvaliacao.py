@@ -1,6 +1,3 @@
-from random import *
-from datetime import *
-
 class Avaliacao:
     def __init__(self, idAvaliacao, conteudoAvaliacao, dataehoraAvaliacao, remetenteAvaliacao, destinatarioAvaliacao):
         self.idAvaliacao = idAvaliacao
@@ -10,35 +7,32 @@ class Avaliacao:
         self.destinatarioAvaliacao = destinatarioAvaliacao
         self.respostaAvaliacao = None
 
-    def get_idAvaliacao(self):
+    def get_idAvaliacao(self):  
         return self.idAvaliacao
 
-    def get_conteudoAvaliacao(self):
-        return self.idAvaliacao
-
-    def get_dataAvaliacao(self):
-        return self.dataAvaliacao
+    def get_conteudoAvaliacao(self):    
+        return self.conteudoAvaliacao
 
     def get_horaAvaliacao(self):
         return self.horaAvaliacao
 
     def get_remetenteAvaliacao(self):
-        return self.remetenteAvaliacao.get_nome()
+        return f"\n\nRemetente da avaliação: {self.remetenteAvaliacao.get_nome()}\nAno escolar do Remetente: {self.remetenteAvaliacao.get_ano_escolar()}\nCurso do Remetente: {self.remetenteAvaliacao.get_curso()}"
 
     def get_destinatarioAvaliacao(self):
-        return self.destinatarioAvaliacao
+        return f"\n\nDestinatário da avaliação: {self.destinatarioAvaliacao.get_nome()}\nDisciplina ministrada pelo Destinatário: {self.destinatarioAvaliacao.get_disciplina_ministrada()}"
 
     def get_respostaAvaliacao(self):
-        return self.respostaAvaliacao
+        if self.respostaAvaliacao == None:
+            return "\n\nResposta do Destinatário:\nA avaliação ainda não foi respondida pelo Destinatário"
+        else:    
+            return f"\n\nResposta do Destinatário:\n{self.respostaAvaliacao}"
 
     def set_idAvaliacao(self, idAvaliacao):
         self.idAvaliacao = idAvaliacao
 
     def set_conteudoAvaliacao(self, conteudoAvaliacao):
         self.conteudoAvaliacao = conteudoAvaliacao
-
-    def set_dataAvaliacao(self, dataAvaliacao):
-        self.dataAvaliacao = dataAvaliacao
 
     def set_horaAvaliacao(self, horaAvaliacao):
         self.horaAvaliacao = horaAvaliacao
@@ -53,14 +47,8 @@ class Avaliacao:
         self.respostaAvaliacao = respostaAvaliacao
 
 
-    def gerarAvaliacao(self):
-        data = datetime.date
-        Hora = datetime.hour
-        self.idAvaliacao = randint(100, 300)
-        self.conteudoAvaliacao = len(input("(Limite de 300 palavras!)\nFaça sua avaliação para o docente desejado:\n-"))
-        self.dataehoraAvaliacao = print(f"Dia: {data}\n Hora:{Hora}")
-        self.remetenteAvaliacao = input("Por Favor Digite seu nome Completo:\n-")
-        self.destinatarioAvaliacao = input("Digite o nome do professor Destinatário:\n-")
+    def gerarAvaliacao(self,dAvaliacao, conteudoAvaliacao, dataAvaliacao, horaAvaliacao, remetenteAvaliacao, destinatarioAvaliacao, respostaAvaliacao):
+        Avaliacao(dAvaliacao, conteudoAvaliacao, dataAvaliacao, horaAvaliacao, remetenteAvaliacao, destinatarioAvaliacao, respostaAvaliacao)
 
     def consultarStatus(self):
         pass
