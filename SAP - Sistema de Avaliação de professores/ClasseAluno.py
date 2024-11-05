@@ -1,8 +1,5 @@
-from ClasseAluno import*
-from ClasseProfessor import*
-from ClasseUsuario import*
-from dicionario import*
-from instancias import*
+from ClasseUsuario import *
+from datetime import datetime
 
 class Aluno(UsuarioIfro):
 
