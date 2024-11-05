@@ -53,18 +53,31 @@ while True:
       if opcao_escrever == "1":
         usuario = dicionario_de_usuario_alunos_cadastrados[login_usuario]
         Aluno_logado = Aluno (usuario[0],usuario[1],usuario[2],usuario[3],usuario[4],usuario[5])
-        conteudo = Aluno_logado.escreverAvaliacao()                                                            
-        avaliacao = Avaliacao(0, conteudo , conteudo, Aluno_logado, 0)                                           #Associação     
-        mural.adicionarAvaliacao(avaliacao)                                                                      #Agregação
-        mural.consultarAvaliacao()
-        nome_profs = [valor[0] for valor in dicionario_de_profs_cadastrados.values()]
-        print (nome_profs)
-        DadoProfessor = input("Por favor, coloque o nome do professor a quem deseja avaliar")  #OBS: INVERTER POSIÇÕES, PARA PERGUNTAR A QUE PROF DESEJA ENVIAR PRIMEIRO E DEPOIS AVALIAR
-        if DadoProfessor not in nome_profs:
+        usuario_profs = [professor for professor in dicionario_de_profs_cadastrados.keys()]
+        print (usuario_profs)
+        DadoProfessor = input("Por favor, coloque o usuário do professor a quem deseja avaliar")  #OBS: INVERTER POSIÇÕES, PARA PERGUNTAR A QUE PROF DESEJA ENVIAR PRIMEIRO E DEPOIS AVALIAR
+        Professor1 = dicionario_de_profs_cadastrados[DadoProfessor]
+        ProfessorCitado = Professor(Professor1[0],Professor1[1],Professor1[2],Professor1[3],Professor1[4],Professor1[5])
+        if DadoProfessor not in usuario_profs:
           print ("Coloque uma resposta válida")
           continue
         else:
-          avaliacao = Avaliacao(0, conteudo , conteudo, Aluno_logado, DadoProfessor)
+          usuario = dicionario_de_usuario_alunos_cadastrados[login_usuario]
+          Aluno_logado = Aluno (usuario[0],usuario[1],usuario[2],usuario[3],usuario[4],usuario[5])
+          usuario_profs = [professor for professor in dicionario_de_profs_cadastrados.keys()]
+          print (usuario_profs)
+          DadoProfessor = input("Por favor, coloque o usuário do professor a quem deseja avaliar")  #OBS: INVERTER POSIÇÕES, PARA PERGUNTAR A QUE PROF DESEJA ENVIAR PRIMEIRO E DEPOIS AVALIAR
+          Professor1 = dicionario_de_profs_cadastrados[DadoProfessor]
+          ProfessorCitado = Professor(Professor1[0],Professor1[1],Professor1[2],Professor1[3],Professor1[4],Professor1[5])
+          if DadoProfessor not in usuario_profs:
+            print ("Coloque uma resposta válida")
+            continue
+          else:
+            conteudo = Aluno_logado.escreverAvaliacao()                                                            
+            avaliacao = Avaliacao(0, conteudo , conteudo, Aluno_logado, ProfessorCitado)                                         #Associação     
+            mural.adicionarAvaliacao(avaliacao)                                                                      #Agregação
+            mural.consultarAvaliacao()
+
           print("Sua avaliação está completa")
 
     elif tipo_usuario == "2":
