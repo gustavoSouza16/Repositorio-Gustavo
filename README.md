@@ -1,4 +1,4 @@
-SAP - Sistena de Aavaliação de Professores
+SAP - Sistema de Avaliação de Professores
 
 2°Ano Vespertino - Informática, Programação Orientada a Objetos
 
