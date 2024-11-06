@@ -16,7 +16,6 @@ class Mural:
     def set_descricao(self,nova_descricao):
         self.__descricao = nova_descricao
     
-
     def adicionarAvaliacao(self, Avaliacao):
         self.__avaliacoesAprovados.append(Avaliacao)
         
