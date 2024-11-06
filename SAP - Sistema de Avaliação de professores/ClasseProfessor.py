@@ -1,4 +1,4 @@
-from classes import *
+from ClasseUsuario import *
 
 class Professor(UsuarioIfro):
     def __init__(self, nome, idade, login_usuario,login_senha, salario, disciplina_ministrada):
