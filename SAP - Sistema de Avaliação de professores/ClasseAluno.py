@@ -1,4 +1,4 @@
-from classes import *
+from ClasseUsuario import *
 from datetime import datetime
 
 class Aluno(UsuarioIfro):
