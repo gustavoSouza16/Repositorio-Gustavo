@@ -1,4 +1,4 @@
-from ClasseAluno import *
+from classes import *
 from datetime import datetime
 
 class Aluno(UsuarioIfro):
@@ -8,19 +8,18 @@ class Aluno(UsuarioIfro):
         self._ano_escolar = ano_escolar
         self._curso = curso
 
-
     def get_ano_escolar(self):
         return self._ano_escolar
 
     def set_ano_escolar(self, novo_ano_escolar):
         self._ano_escolar = novo_ano_escolar        
-
+        
     def get_curso(self):
         return self._curso
-
+        
     def set_curso(self, novo_curso):
         self._curso = novo_curso
-
+        
     def cadastrar(self):
         while True:
             self.nome = input("Digite seu nome: ")
@@ -39,9 +38,7 @@ class Aluno(UsuarioIfro):
             else:
                 print ("Cadastro Finalizado")
                 break
-
-#escrever método escrever depois
-
+                
     def escreverAvaliacao(self):
         avalicacao_escrita = input("Escreva sua avaliação\n> ")
         dataehora = datetime.now()
