@@ -1,4 +1,4 @@
-from ClasseAvaliacao import*
+from ClasseUsuario import*
 from random import *
 
 class ChefiaImediata(UsuarioIfro):
