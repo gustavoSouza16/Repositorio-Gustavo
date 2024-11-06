@@ -1,6 +1,6 @@
-from database import  dicionario_de_usuario_alunos_cadastrados, dicionario_de_profs_cadastrados
-from classeprofessor import Professor
-from classealunoo import Aluno
+from dicionario import  dicionario_de_usuario_alunos_cadastrados, dicionario_de_profs_cadastrados
+from ClasseProfessor import Professor
+from ClasseAluno import Aluno
 
 #Instâncias de Alunos
 
