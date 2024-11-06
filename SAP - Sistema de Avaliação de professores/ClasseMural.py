@@ -1,22 +1,31 @@
 class Mural:
     def __init__(self):
-        self.idMural = None
-        self.quantidadeAvaliacao = None
-        self.descricao = None
-        self.avaliacoesAprovados = []
+        self.__idMural = None
+        self.__descricao = "O mural é o local onde o usuário pode inserir suas avaliações feitas para um docente de sua instituição e ver outras avaliações realizadas por outros discentes."                                                                     
+        self.__avaliacoesAprovados = []                                                             #Agregação
     
+    def get_idMural(self):
+        return self.__idMural
+    
+    def get_descricao(self):
+        return self.__descricao
+    
+    def set_idMural(self, novoID):
+        self.__idMural = novoID
+    
+    def set_descricao(self,nova_descricao):
+        self.__descricao = nova_descricao
+    
+
     def adicionarAvaliacao(self, Avaliacao):
-        self.avaliacoesAprovados.append(Avaliacao)
-        
-    def removerAvaliacao(self, idAvaliacao):
-        pass
+        self.__avaliacoesAprovados.append(Avaliacao)
         
     def consultarAvaliacao(self):
         print("-"*100)
-        for avaliacao in self.avaliacoesAprovados:
-            print (avaliacao.get_conteudoAvaliacao(),avaliacao.get_remetenteAvaliacao(), avaliacao.get_destinatarioAvaliacao(), avaliacao.get_respostaAvaliacao())
+        for avaliacao in self.__avaliacoesAprovados:
+            print (avaliacao.get_idAvaliacao(),avaliacao.get_conteudoAvaliacao(),avaliacao.get_remetenteAvaliacao(), avaliacao.get_destinatarioAvaliacao(), avaliacao.get_respostaAvaliacao())
         print("-"*100)
         
-    def consultarDescricao(self):
-        print("O mural é o local onde o usuário pode inserir suas avaliações feitas para um docente de sua instituição e ver outras avaliações realizadas por outros discentes.")
+
+
 
