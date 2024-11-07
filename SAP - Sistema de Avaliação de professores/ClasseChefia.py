@@ -19,11 +19,11 @@ class ChefiaImediata(UsuarioIfro):
         self.__email = novoEmail
 
     def visualizarAvaliacao(self,avaliacao):
-        return avaliacao.gerarAvaliacao()                                                               #Associação
+        return avaliacao.gerarAvaliacao()                                                                 #Relacionamento de Associação
 
     def aprovarAvaliacao(self, mural,avaliacao):
         print("Avaliação aprovada e sendo inserida no Mural")
-        mural.adicionarAvaliacao(avaliacao)                                                             #Agregação
+        mural.adicionarAvaliacao(avaliacao)                                                               #Relacionamento de Agregação
         print ("Avaliação inserida e disponível para os professores destinatários vizualizarem")
         
     def reprovarAvaliacao(self):
