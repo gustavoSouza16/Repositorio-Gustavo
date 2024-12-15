@@ -32,7 +32,7 @@ class ChefiaImediata(UsuarioIfro):
     def cadastrar(self):
         nome = input("Digite seu nome: ")
         self.set_nome(nome)
-        idade = int(input("Digite sua idade:"))
+        idade = int(input("Digite sua idade:"))                    #ACRESCENTAR TRY EXCEPT
         self.set_idade(idade)
         login_usuario = input("Cadastre um usuário: ")
         self.set_login_usuario(login_usuario)
