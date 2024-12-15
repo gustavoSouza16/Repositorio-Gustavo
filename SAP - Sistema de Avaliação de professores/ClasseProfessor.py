@@ -32,13 +32,13 @@ class Professor(UsuarioIfro):
     def cadastrar(self):
         nome = input("Digite seu nome: ")
         self.set_nome(nome)
-        idade = int(input("Digite sua idade:"))
+        idade = int(input("Digite sua idade:"))                                          #ACRESCENTAR TRY EXCEPT
         self.set_idade(idade)
         login_usuario = input("Cadastre um usuário: ")
         self.set_login_usuario(login_usuario)
         login_senha = input("Cadastre uma senha: ")
         self.set_login_senha(login_senha)
-        salario = int(input("Digite seu salário: "))
+        salario = int(input("Digite seu salário: "))                                     #ACRESCENTAR TRY EXCEPT
         self.set_salario(salario)
         disciplina_ministrada = input("Digite a disciplina que você ministra: ")
         self.set_disciplina_ministrada(disciplina_ministrada)
