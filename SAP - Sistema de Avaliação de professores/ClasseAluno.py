@@ -30,7 +30,7 @@ class Aluno(UsuarioIfro):
             self.set_login_usuario(login_usuario)
             login_senha = input("Cadastre uma senha: ")
             self.set_login_senha(login_senha)
-            self.__ano_escolar = input("Qual sua série?\n[1] - Primeiro ano\n[2] - Segundo ano\n[3] - Terceiro ano\n> ")
+            self.__ano_escolar = input("Qual sua série?\n[1] - Primeiro ano\n[2] - Segundo ano\n[3] - Terceiro ano\n> ") #MUDAR PARA NÚMEROS AO INVÉS DE STRINGS DE NÚMEROS E TRY EXCET
             if self.__ano_escolar != "1" and self.__ano_escolar != "2" and self.__ano_escolar != "3":
                 print ("Coloque uma resposta válida.")
                 continue
