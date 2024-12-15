@@ -6,7 +6,7 @@ AvaliacoesAndamento = []
 def logar(login_usuario, login_senha, dicionario):
     if login_usuario in dicionario:
         usuario = dicionario[login_usuario]
-        if login_senha == usuario[3]:
+        if login_senha == usuario[3]:                                                    #TENTAR ACRESCENTAR TRY EXCEPT, POIS HÁ POSSIBILIDADE DE MELHORIA
             print(f"Você está logado, BEM VINDO {usuario[0]}!")
             return True
         else:
