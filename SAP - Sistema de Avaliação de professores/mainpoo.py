@@ -24,7 +24,7 @@ while True:
     if opcao == "1":
         print("\nCadastrar como:\n[1] - Aluno\n[2] - Professor\n[3] - Chefia Imediata")
         cadastrar_usuario = input("Coloque sua resposta:\n> ")
-        if cadastrar_usuario == "1":
+        if cadastrar_usuario == "1":                                                                            #MODIFICAR PARA NÚMEROS REAIS AO INVÉS DE STRINGS
             criar_usuario_obj = Aluno(0,0,0,0,0,0)
             criar_usuario_obj.cadastrar()
             dicionario_de_usuario_alunos_cadastrados[criar_usuario_obj.get_login_usuario()] = f"{criar_usuario_obj.get_nome()}", (criar_usuario_obj.get_idade()), f"{criar_usuario_obj.get_login_usuario()}", f"{criar_usuario_obj.get_login_senha()}", f"{criar_usuario_obj.get_ano_escolar()}", f"{criar_usuario_obj.get_curso()}"
@@ -61,9 +61,9 @@ while True:
                     ProfessorCitado = Professor(Professor1[0],Professor1[1],Professor1[2],Professor1[3],Professor1[4],Professor1[5])
                 elif opcao_escrever == "2":
                     continue
-                else:
+                else:                                     
                     continue
-                if DadoProfessor not in usuario_profs:
+                if DadoProfessor not in usuario_profs:                                            #TALVEZ DÊ PARA REMOVER UTILIZANDO O TRY EXCEPT NO DICIONÁRIO, ITEM A SER OBSERVADO
                     print ("Coloque uma resposta válida")
                     continue
                 else:
