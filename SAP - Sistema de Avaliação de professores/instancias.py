@@ -6,7 +6,7 @@ from ClasseAluno import Aluno
 
 Carlos = Aluno("Carlos", 16, "Carlos123", "Carlos21", "1", "INFORMÁTICA")
 Thales = Aluno("Thales", 18, "Thales325", "Thales3024", "2", "QUÍMICA")
-Seixas = Aluno("Seixas", 17, "Seixasbrabo", "Seixasincrível", "1","EDIFICAÇÕES")
+Seixas = Aluno("Seixas", 17, "Seixasbrabo", "Seixasincrível", "1","EDIFICAÇÕES")                         #OBS: TALVEZ SEJA NECESSÁRIO MUDAR ALGO PARA O DICIONÁRIO CONTINUAR FUNCIONANDO PERFEITAMENTE, TALVEZ...
 Silvio = Aluno("Silvio", 19, "SilvioRei", "Silviolegal", "3", "ELETROTÉCNICA")
 
 #Adicionando essas instâncias de aluno no dicionário de aluno
