@@ -5,6 +5,7 @@
 try:
     from ClasseUsuario import *
     from datetime import datetime
+    from ClasseErros import *
 
     class Aluno(UsuarioIfro):
 
@@ -27,36 +28,45 @@ try:
             
         def cadastrar(self):
             while True:
- 
+                try:
                     nome = str(input("Digite seu nome: "))
                     self.set_nome(nome)
-                    try:
-                        idade = int(input("Digite sua idade:"))
-                        self.set_idade(idade)
-                    except ValueError:
-                        print("Insira um número, sendo este do tipo inteiro.")
-                        print("Reiniciando o processo...")
-                        continue
+                    
+                    idade = int(input("Digite sua idade:"))
+                    self.set_idade(idade)
+
                     login_usuario = input("Cadastre um usuário: ")
                     self.set_login_usuario(login_usuario)
+
                     login_senha = input("Cadastre uma senha: ")
                     self.set_login_senha(login_senha)
+
                     self.__ano_escolar = input("Qual sua série?\n[1] - Primeiro ano\n[2] - Segundo ano\n[3] - Terceiro ano\n> ")
                     if self.__ano_escolar < "1" or self.__ano_escolar > "3":
-                         print("Digite um número inteiro sendo ele entre 1, 2 ou 3.")
-                         continue
+                        print ("Coloque uma opção válida")
+                        continue
+
                     print ("Digite seu curso o nome do seu curso:\nInformática\nQuímica\nEdificações\nEletrotécnica")
                     self.__curso = input("Coloque sua resposta: ").upper()
                     if self.__curso not in ["INFORMÁTICA", "QUÍMICA", "ELETROTÉCNICA", "EDIFICAÇÕES"]:
-                        print ("Coloque uma opção válida")
-                        continue
+                        print("Curso inválido! Escolha entre: INFORMÁTICA, QUÍMICA, ELETROTÉCNICA ou EDIFICAÇÕES.")
                     else:
                         print ("Cadastro Finalizado")
                         break
-
                     
+                except NumError:
+                    print("O nome não pode conter números, caracteres como virgula ou pontos e espaços em branco.") 
+                    
+                except ValueError:
+                    print("Insira um número, sendo este do tipo inteiro.")
+                    print("Reiniciando o processo...")
+                
+
         def escreverAvaliacao(self):
-            avalicacao_escrita = input("Escreva sua avaliação\n> ")
+            try:
+                avalicacao_escrita = input("Escreva sua avaliação\n> ")
+            except NameError:
+                print("Insira uma resposta válida!")
             dataehora = datetime.now()
             return avalicacao_escrita, dataehora
 except IndentationError:
