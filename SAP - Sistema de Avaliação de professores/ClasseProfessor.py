@@ -32,8 +32,17 @@ class Professor(UsuarioIfro):
     def cadastrar(self):
         nome = input("Digite seu nome: ")
         self.set_nome(nome)
-        idade = int(input("Digite sua idade:"))
-        self.set_idade(idade)
+
+        #Exceção para idade
+        while True:
+            try:
+                idade = int(input("Digite sua idade:"))
+                print(idade)
+                break
+            except ValueError:
+                print("Ops! Parece que você inseriu um valor inválido. Por favor, insira um número inteiro.")
+
+        
         login_usuario = input("Cadastre um usuário: ")
         self.set_login_usuario(login_usuario)
         login_senha = input("Cadastre uma senha: ")
