@@ -27,7 +27,7 @@ try:
             
         def cadastrar(self):
             while True:
-                try:  
+ 
                     nome = str(input("Digite seu nome: "))
                     self.set_nome(nome)
                     try:
@@ -42,19 +42,18 @@ try:
                     login_senha = input("Cadastre uma senha: ")
                     self.set_login_senha(login_senha)
                     self.__ano_escolar = input("Qual sua série?\n[1] - Primeiro ano\n[2] - Segundo ano\n[3] - Terceiro ano\n> ")
-                    if self.__ano_escolar != "1" and self.__ano_escolar != "2" and self.__ano_escolar != "3":
-                        print ("Coloque uma resposta válida.")
-                        continue
+                    if self.__ano_escolar < "1" or self.__ano_escolar > "3":
+                         print("Digite um número inteiro sendo ele entre 1, 2 ou 3.")
+                         continue
                     print ("Digite seu curso o nome do seu curso:\nInformática\nQuímica\nEdificações\nEletrotécnica")
                     self.__curso = input("Coloque sua resposta: ").upper()
-                    if self.__curso != 'INFORMÁTICA' and self.__curso != 'QUÍMICA' and self.__curso != 'EDIFICAÇÕES' and  self.__curso != 'ELETROTÉCNICA':
+                    if self.__curso not in ["INFORMÁTICA", "QUÍMICA", "ELETROTÉCNICA", "EDIFICAÇÕES"]:
                         print ("Coloque uma opção válida")
                         continue
                     else:
                         print ("Cadastro Finalizado")
                         break
-                except:
-                    print("Ocorreu algo inesperado. XO")
+
                     
         def escreverAvaliacao(self):
             avalicacao_escrita = input("Escreva sua avaliação\n> ")
