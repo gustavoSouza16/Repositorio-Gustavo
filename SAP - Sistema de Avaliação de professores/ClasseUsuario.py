@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-
+from ClasseErros import *
 class UsuarioIfro(ABC):
     def __init__(self, nome, idade,login_usuario,login_senha):
             self.__nome = nome
@@ -11,14 +11,16 @@ class UsuarioIfro(ABC):
         return self.__nome
         
     def set_nome(self,nome):
-        self.__nome = nome
-        
+         if not nome.isalpha():
+            raise NumError("O nome não pode conter números!")
+         self.__nome = nome
+
     def get_idade(self):
         return self.__idade
         
     def set_idade (self, idade):
-        self.__idade = idade
-        
+         self.__idade = idade
+         
     def get_login_usuario(self):
         return self.__login_usuario
         
