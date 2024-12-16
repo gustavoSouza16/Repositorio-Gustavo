@@ -30,14 +30,21 @@ class ChefiaImediata(UsuarioIfro):
         print ("A Avaliação foi reprovada.")
 
     def cadastrar(self):
-        nome = input("Digite seu nome: ")
-        self.set_nome(nome)
-        idade = int(input("Digite sua idade:"))                    #ACRESCENTAR TRY EXCEPT
-        self.set_idade(idade)
-        login_usuario = input("Cadastre um usuário: ")
-        self.set_login_usuario(login_usuario)
-        login_senha = input("Cadastre uma senha: ")
-        self.set_login_senha(login_senha)
-        email = input("Digite seu email: ")
-        self.set_email(email)
+        while True:
+            nome = input("Digite seu nome: ")
+            self.set_nome(nome)
+            try: 
+                idade = int(input("Digite sua idade:"))
+            except:
+                print("Coloque a idade utilizando números")
+                continue
+                                    #ACRESCENTAR TRY EXCEPT
+            self.set_idade(idade)
+            login_usuario = input("Cadastre um usuário: ")
+            self.set_login_usuario(login_usuario)
+            login_senha = input("Cadastre uma senha: ")
+            self.set_login_senha(login_senha)
+            email = input("Digite seu email: ")
+            self.set_email(email)
+            break
        
