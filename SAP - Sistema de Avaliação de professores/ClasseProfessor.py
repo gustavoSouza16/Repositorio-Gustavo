@@ -1,7 +1,7 @@
 from ClasseUsuario import*
 from dicionario import*
 from instancias import*
-from ClasseAluno import Aluno
+from ClasseAluno import *
 from ClasseAvaliacao import Avaliacao
 from datetime import datetime
 from ClasseMural import*
@@ -30,18 +30,25 @@ class Professor(UsuarioIfro):
         self.__disciplina_ministrada = nova_disciplina
 
     def cadastrar(self):
-        nome = input("Digite seu nome: ")
-        self.set_nome(nome)
-        idade = int(input("Digite sua idade:"))
-        self.set_idade(idade)
-        login_usuario = input("Cadastre um usuário: ")
-        self.set_login_usuario(login_usuario)
-        login_senha = input("Cadastre uma senha: ")
-        self.set_login_senha(login_senha)
-        salario = int(input("Digite seu salário: "))
-        self.set_salario(salario)
-        disciplina_ministrada = input("Digite a disciplina que você ministra: ")
-        self.set_disciplina_ministrada(disciplina_ministrada)
+        while True:
+            nome = input("Digite seu nome: ")
+            self.set_nome(nome)
+            try:
+                idade = int(input("Digite sua idade:"))   
+            except ValueError:
+                        print("Insira um número, sendo este do tipo inteiro.")
+                        print("Reiniciando o processo...")
+                        continue       
+            self.set_idade(idade)
+            login_usuario = input("Cadastre um usuário: ")
+            self.set_login_usuario(login_usuario)
+            login_senha = input("Cadastre uma senha: ")
+            self.set_login_senha(login_senha)
+            salario = int(input("Digite seu salário: "))
+            self.set_salario(salario)
+            disciplina_ministrada = input("Digite a disciplina que você ministra: ")
+            self.set_disciplina_ministrada(disciplina_ministrada)
+            break
 
     def visualizarMural(self,mural):
         mural.consultarAvaliacao()                                                              #Associação
