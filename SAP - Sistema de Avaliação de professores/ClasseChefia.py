@@ -2,10 +2,10 @@ from ClasseUsuario import*
 from random import *
 
 class ChefiaImediata(UsuarioIfro):
-    def __init__(self, nome, idade, login_usuario,login_senha, email,IdChefia):
+    def __init__(self, nome, idade, login_usuario,login_senha, email,IDChefia):
         super().__init__(nome, idade, login_usuario,login_senha)
         self.__email = email
-        self.__IdChefia = IdChefia
+        self.__IdChefia = IDChefia
 
     def get_idChefia(self):
         return self.__idChefia
