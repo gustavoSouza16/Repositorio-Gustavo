@@ -37,7 +37,6 @@ class Professor(UsuarioIfro):
         while True:
             try:
                 idade = int(input("Digite sua idade:"))
-                print(idade)
                 break
             except ValueError:
                 print("Ops! Parece que você inseriu um valor inválido. Por favor, insira um número inteiro.")
@@ -55,4 +54,5 @@ class Professor(UsuarioIfro):
     def visualizarMural(self,mural):
         mural.consultarAvaliacao()                                                              #Associação
         
+
 
