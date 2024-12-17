@@ -19,12 +19,26 @@ class Mural:
     def adicionarAvaliacao(self, Avaliacao):
         self.__avaliacoesAprovados.append(Avaliacao)
         
-    def consultarAvaliacao(self):
-        print("-"*100)
-        for avaliacao in self.__avaliacoesAprovados:
-            print (avaliacao.get_idAvaliacao(),avaliacao.get_conteudoAvaliacao(),avaliacao.get_remetenteAvaliacao(), avaliacao.get_destinatarioAvaliacao(), avaliacao.get_respostaAvaliacao())
-        print("-"*100)
+    def consultarAvaliacao(self):       #Utilização dos comandos de tratamento  de exceção
+        try:
+            if not self.__avaliacoesAprovados:
+                raise ValueError('Não há avaliações disponíveis no mural.')
+            print("-"*100)
+            for avaliacao in self.__avaliacoesAprovados:
+                print (avaliacao.get_idAvaliacao(),
+                       avaliacao.get_conteudoAvaliacao(),
+                       avaliacao.get_remetenteAvaliacao(),
+                         avaliacao.get_destinatarioAvaliacao(),
+                           avaliacao.get_respostaAvaliacao())
+            print("-"*100)
         
+        except ValueError:
+            print('Não há avaliações disponíveis no mural.')
+        except Exception:
+            print('Ocorreu um erro inesperado.')
+        finally:
+            print('Consulta no mural finalizada.')
+
 
 
 
