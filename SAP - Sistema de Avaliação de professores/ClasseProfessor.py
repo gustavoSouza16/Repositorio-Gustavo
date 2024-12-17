@@ -37,6 +37,7 @@ class Professor(UsuarioIfro):
         while True:
             try:
                 idade = int(input("Digite sua idade:"))
+                self.set_idade
                 break
             except ValueError:
                 print("Ops! Parece que você inseriu um valor inválido. Por favor, insira um número inteiro.")
@@ -47,8 +48,16 @@ class Professor(UsuarioIfro):
         self.set_login_usuario(login_usuario)
         login_senha = input("Cadastre uma senha: ")
         self.set_login_senha(login_senha)
-        salario = int(input("Digite seu salário: "))
-        self.set_salario(salario)
+        
+        #Exceção para salário
+        while True:     
+            try:
+                salario = int(input("Digite seu salário: "))
+                self.set_salario(salario)
+                break
+            except ValueError:
+                print("Por favor, insira um valor válido.")
+
         disciplina_ministrada = input("Digite a disciplina que você ministra: ")
         self.set_disciplina_ministrada(disciplina_ministrada)
 
