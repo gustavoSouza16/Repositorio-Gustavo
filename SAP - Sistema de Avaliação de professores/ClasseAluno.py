@@ -32,7 +32,7 @@ try:
                     nome = str(input("Digite seu nome: "))
                     self.set_nome(nome)
                     
-                    idade = int(input("Digite sua idade:"))
+                    idade = input("Digite sua idade:")
                     self.set_idade(idade)
 
                     login_usuario = input("Cadastre um usuário: ")
@@ -57,13 +57,9 @@ try:
                 except NumError:
                     print("O nome não pode conter números, caracteres como virgula ou pontos e espaços em branco.") 
                     
-                except StrError:
+                except ValueError:
                     print("Insira um número, sendo este do tipo inteiro.")
                     print("Reiniciando o processo...")
-
-                finally:
-                    print("Parabéns! Você cadastrou um usuário.")
-                
 
         def escreverAvaliacao(self):
             try:

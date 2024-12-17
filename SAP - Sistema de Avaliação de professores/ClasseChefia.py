@@ -30,14 +30,31 @@ class ChefiaImediata(UsuarioIfro):
         print ("A Avaliação foi reprovada.")
 
     def cadastrar(self):
-        nome = input("Digite seu nome: ")
-        self.set_nome(nome)
-        idade = int(input("Digite sua idade:"))
-        self.set_idade(idade)
-        login_usuario = input("Cadastre um usuário: ")
-        self.set_login_usuario(login_usuario)
-        login_senha = input("Cadastre uma senha: ")
-        self.set_login_senha(login_senha)
-        email = input("Digite seu email: ")
-        self.set_email(email)
+        while True:
+            try:
+                nome = input("Digite seu nome: ")
+                self.set_nome(nome)
+
+                idade = int(input("Digite sua idade:"))
+                self.set_idade(idade)
+
+                login_usuario = input("Cadastre um usuário: ")
+                self.set_login_usuario(login_usuario)
+
+                login_senha = input("Cadastre uma senha: ")
+                self.set_login_senha(login_senha)
+
+                email = input("Digite seu email: ")
+                self.set_email(email)
+                break
+
+            except StrError:
+                print("Insira um número, sendo este do tipo inteiro.")
+                print("Reiniciando o processo...")
+            
+            except NumError:
+                print("O nome não pode conter números, caracteres como virgula ou pontos e espaços em branco.")
+            
+            except ValueError:
+                print("Sua idade não pode conter Letras, caracteres como virgula ou pontos e espaços em branco.")
        

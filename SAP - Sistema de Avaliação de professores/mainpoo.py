@@ -35,7 +35,7 @@ while True:
             dicionario_de_profs_cadastrados[criar_usuario_obj.get_login_usuario()] = f"{criar_usuario_obj.get_nome()}", criar_usuario_obj.get_idade(), f"{criar_usuario_obj.get_login_usuario()}", f"{criar_usuario_obj.get_login_senha()}", criar_usuario_obj.get_salario() , f"{criar_usuario_obj.get_disciplina_ministrada()}"
             print(f"Você foi cadastrado {criar_usuario_obj.get_nome()}")
         elif cadastrar_usuario == "3":
-            criar_usuario_obj = ChefiaImediata(0,0,0,0,0,0)
+            criar_usuario_obj = ChefiaImediata(0,0,0,0,0)
             criar_usuario_obj.cadastrar()
             dicionario_de_chefia[criar_usuario_obj.get_login_usuario()] = f"{criar_usuario_obj.get_nome()}", criar_usuario_obj.get_idade(), f"{criar_usuario_obj.get_login_usuario()}", f"{criar_usuario_obj.get_login_senha()}", criar_usuario_obj.get_idChefia() , f"{criar_usuario_obj.get_email()}"
             print(f"Você foi cadastrado {criar_usuario_obj.get_nome()}")
@@ -50,7 +50,7 @@ while True:
             login_senha = input("Coloque sua senha para login:")
             op = logar(login_usuario, login_senha,dicionario_de_usuario_alunos_cadastrados)
             if op == True:
-                opcao_escrever = input("[1] - Escrever Avaliação de professor\n[2] - Retornar ao menu")
+                opcao_escrever = input("[1] - Escrever Avaliação de professor\n[2] - Retornar ao menu\n>")
                 if opcao_escrever == "1":
                     usuario = dicionario_de_usuario_alunos_cadastrados[login_usuario]
                     Aluno_logado = Aluno (usuario[0],usuario[1],usuario[2],usuario[3],usuario[4],usuario[5])
@@ -61,8 +61,11 @@ while True:
                     ProfessorCitado = Professor(Professor1[0],Professor1[1],Professor1[2],Professor1[3],Professor1[4],Professor1[5])
                 elif opcao_escrever == "2":
                     continue
-                else:
+                elif opcao_escrever != "1" or opcao_escrever != "2":
+                    print("Escolha um número, sendo eles 1 ou 2.")
                     continue
+                else:
+                    print("Aconteceu algo inesperado XO")
                 if DadoProfessor not in usuario_profs:
                     print ("Coloque uma resposta válida")
                     continue
@@ -80,15 +83,17 @@ while True:
             login_senha = input("Coloque sua senha para login:")
             op = logar(login_usuario, login_senha, dicionario_de_profs_cadastrados)
             if op == True:
-                visu = input("[1] - Visualizar o Mural de Avaliações\n[2] - Retornar ao menu")
+                visu = input("[1] - Visualizar o Mural de Avaliações\n[2] - Retornar ao menu\n>")
                 if visu == "1":
                     prof = dicionario_de_profs_cadastrados[login_usuario]
                     prof_logado = Professor(prof[0], prof[1], prof[2], prof[3], prof[4], prof[5])
                     prof_logado.visualizarMural(mural)                                                                                #Associação
                 if visu == "2":
                     continue
-                else:
-                    continue
+
+                elif visu != "1" or visu != "2":
+                  print("Escolha um número, sendo eles 1 ou 2.")
+                  continue
             if op == False:
                 continue
 

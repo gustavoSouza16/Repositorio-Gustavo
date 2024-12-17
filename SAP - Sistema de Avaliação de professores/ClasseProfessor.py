@@ -21,36 +21,54 @@ class Professor(UsuarioIfro):
         return(self.__salario)
 
     def set_salario(self,novo_salario):
-        self.__salario = novo_salario
+        if not str(novo_salario).isdigit():
+            raise SalarioError()
+        self.__salario = int(novo_salario)
 
     def get_disciplina_ministrada(self):
         return(self.__disciplina_ministrada)
 
-    def set_disciplina_ministrada(self,nova_disciplina,):
-        self.__disciplina_ministrada = nova_disciplina
-
+    def set_disciplina_ministrada(self,nova_disciplina):
+         if not nova_disciplina.isalpha():
+            raise DisciplinaErro
+         self.__disciplina_ministrada = nova_disciplina
+         
     def cadastrar(self):
         while True:
-            nome = input("Digite seu nome: ")
-            self.set_nome(nome)
             try:
-                idade = int(input("Digite sua idade:"))   
-            except ValueError:
-                        print("Insira um número, sendo este do tipo inteiro.")
-                        print("Reiniciando o processo...")
-                        continue       
-            self.set_idade(idade)
-            login_usuario = input("Cadastre um usuário: ")
-            self.set_login_usuario(login_usuario)
-            login_senha = input("Cadastre uma senha: ")
-            self.set_login_senha(login_senha)
-            salario = int(input("Digite seu salário: "))
-            self.set_salario(salario)
-            disciplina_ministrada = input("Digite a disciplina que você ministra: ")
-            self.set_disciplina_ministrada(disciplina_ministrada)
-            break
+                nome = input("Digite seu nome: ")
+                self.set_nome(nome)
 
-    def visualizarMural(self,mural):
+                idade = input("Digite sua idade:") 
+                self.set_idade(idade)
+
+                login_usuario = input("Cadastre um usuário: ")
+                self.set_login_usuario(login_usuario)
+
+                login_senha = input("Cadastre uma senha: ")
+                self.set_login_senha(login_senha)
+
+                salario = input("Digite seu salário: ")
+                self.set_salario(salario)
+
+                disciplina_ministrada = input("Digite a disciplina que você ministra: ")
+                self.set_disciplina_ministrada(disciplina_ministrada)
+                break
+            
+            except ValueError:
+                print("Sua idade não pode conter Letras, caracteres como virgula ou pontos e espaços em branco.")
+
+            except DisciplinaErro:
+                print("A Disciplina não pode conter números, apenas algarismos romanos se precisar.")
+
+            except SalarioError:
+                print("Utilize apenas números!")   
+
+            except NumError:
+                 print("O nome não pode conter números, caracteres como virgula ou pontos e espaços em branco.")
+             
+
+    def visualizarMural(self, mural):
         mural.consultarAvaliacao()                                                              #Associação
         
 

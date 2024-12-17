@@ -18,11 +18,11 @@ class UsuarioIfro(ABC):
     def get_idade(self):
         return self.__idade
         
-    def set_idade (self, idade):
-         if not idade.isdigit():
-             raise StrError("Sem Letras!!!!")
-         self.__idade = idade
-         
+    def set_idade(self, idade):
+        if not str(idade).isdigit():
+            raise ValueError()
+        self.idade = int(idade)
+
     def get_login_usuario(self):
         return self.__login_usuario
         

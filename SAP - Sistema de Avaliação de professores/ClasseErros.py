@@ -6,3 +6,9 @@ class NumError(Exception):
 
 class StrError(Exception):
     pass
+
+class DisciplinaErro(Exception):
+    pass
+
+class SalarioError(Exception):
+    pass
