@@ -38,14 +38,38 @@ class Professor(UsuarioIfro):
             try:
                 idade = int(input("Digite sua idade:"))
                 self.set_idade
+                if idade < 18:
+                    raise ValueError
+                
                 break
             except ValueError:
-                print("Ops! Parece que você inseriu um valor inválido. Por favor, insira um número inteiro.")
+                print("Ops! Parece que você inseriu um valor menor que 18.")
+            
+            try:
+                idade = int(input("Digite sua idade:"))
+                self.set_idade
+                if idade > 100:
+                    raise ValueError
+                
+                break
+            except ValueError:
+                print("Ops! Parece que você inseriu um valor maior que 100.")
+
+            try:
+                idade = int(input("Digite sua idade:"))
+                self.set_idade
+                break
+            except ValueError:
+                print("Ops! Parece que você inseriu um valor inválido. Por favor insira um número inteiro.")
+
+
+            
             
     
 
 
         
+
         login_usuario = input("Cadastre um usuário: ")
         self.set_login_usuario(login_usuario)
 
