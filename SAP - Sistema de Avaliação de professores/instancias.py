@@ -10,7 +10,7 @@ Seixas = Aluno("Seixas", 17, "Seixasbrabo", "Seixasincrível", "1","EDIFICAÇÕE
 Silvio = Aluno("Silvio", 19, "SilvioRei", "Silviolegal", "3", "ELETROTÉCNICA")
 
 #Adicionando essas instâncias de aluno no dicionário de aluno
-
+dicionario_de_usuario_alunos_cadastrados[Carlos.get_login_usuario()] = f"{Carlos.get_nome()}", Carlos.get_idade(), f"{Carlos.get_login_usuario()}", f"{Carlos.get_login_senha()}", f"{Carlos.get_ano_escolar()}", f"{Carlos.get_curso()}"
 dicionario_de_usuario_alunos_cadastrados[Thales.get_login_usuario()] = f"{Thales.get_nome()}", Thales.get_idade(), f"{Thales.get_login_usuario()}", f"{Thales.get_login_senha()}", f"{Thales.get_ano_escolar()}", f"{Thales.get_curso()}"
 dicionario_de_usuario_alunos_cadastrados[Seixas.get_login_usuario()] = f"{Seixas.get_nome()}", Seixas.get_idade(), f"{Seixas.get_login_usuario()}", f"{Seixas.get_login_senha()}", f"{Seixas.get_ano_escolar()}", f"{Seixas.get_curso()}"
 dicionario_de_usuario_alunos_cadastrados[Silvio.get_login_usuario()] = f"{Silvio.get_nome()}", Silvio.get_idade(), f"{Silvio.get_login_usuario()}", f"{Silvio.get_login_senha()}", f"{Silvio.get_ano_escolar()}", f"{Silvio.get_curso()}"
