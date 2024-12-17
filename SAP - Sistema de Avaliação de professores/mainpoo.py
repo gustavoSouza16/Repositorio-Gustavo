@@ -22,8 +22,8 @@ while True:
         print("\n1 - Cadastrar Usuário\n2 - Logar com uma conta\n3 - Sair")
         opcao = input(">")
         if opcao != "1" or  opcao != "2" or opcao != "3":
-            raise ValueError
-    except ValueError:
+            raise StrError
+    except StrError:
         print("Apenas Número inteiros entre 1 e 3.")
     
     if opcao == "1":
