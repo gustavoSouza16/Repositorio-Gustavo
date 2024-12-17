@@ -30,18 +30,27 @@ class Professor(UsuarioIfro):
         self.__disciplina_ministrada = nova_disciplina
 
     def cadastrar(self):
-        nome = input("Digite seu nome: ")
-        self.set_nome(nome)
-        idade = int(input("Digite sua idade:"))                                          #ACRESCENTAR TRY EXCEPT
-        self.set_idade(idade)
-        login_usuario = input("Cadastre um usuário: ")
-        self.set_login_usuario(login_usuario)
-        login_senha = input("Cadastre uma senha: ")
-        self.set_login_senha(login_senha)
-        salario = int(input("Digite seu salário: "))                                     #ACRESCENTAR TRY EXCEPT
-        self.set_salario(salario)
-        disciplina_ministrada = input("Digite a disciplina que você ministra: ")
-        self.set_disciplina_ministrada(disciplina_ministrada)
+        while True:
+            nome = input("Digite seu nome: ")
+            self.set_nome(nome)
+            try:
+                idade = int(input("Digite sua idade:"))
+            except:
+                print("Coloque a idade utilizando números")
+                continue                                          
+            self.set_idade(idade)
+            login_usuario = input("Cadastre um usuário: ")
+            self.set_login_usuario(login_usuario)
+            login_senha = input("Cadastre uma senha: ")
+            self.set_login_senha(login_senha)
+            try:
+                salario = int(input("Digite seu salário: "))
+            except:
+                print("Coloque a idade utilizando números")
+                continue                                    
+            self.set_salario(salario)
+            disciplina_ministrada = input("Digite a disciplina que você ministra: ")
+            self.set_disciplina_ministrada(disciplina_ministrada)
 
     def visualizarMural(self,mural):
         mural.consultarAvaliacao()                                                              #Associação
