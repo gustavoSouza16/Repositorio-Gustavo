@@ -2,7 +2,7 @@ from dicionario import  dicionario_de_usuario_alunos_cadastrados, dicionario_de_
 from ClasseProfessor import Professor
 from ClasseAluno import Aluno
 
-#Instâncias de Alunos
+#Instâncias de Alunos                           #Coleção utilizada no código é o dicionário
 
 Carlos = Aluno("Carlos", 16, "Carlos123", "Carlos21", "1", "INFORMÁTICA")
 Thales = Aluno("Thales", 18, "Thales325", "Thales3024", "2", "QUÍMICA")
