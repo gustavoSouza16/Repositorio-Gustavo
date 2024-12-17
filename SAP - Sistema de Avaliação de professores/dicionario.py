@@ -4,16 +4,14 @@ dicionario_de_chefia = {}
 AvaliacoesAndamento = []
 
 def logar(login_usuario, login_senha, dicionario):
-    if login_usuario in dicionario:
+    try:
         usuario = dicionario[login_usuario]
-        if login_senha == usuario[3]:                                                    #TENTAR ACRESCENTAR TRY EXCEPT, POIS HÁ POSSIBILIDADE DE MELHORIA
+        if login_senha == usuario[3]:                                                    
             print(f"Você está logado, BEM VINDO {usuario[0]}!")
             return True
-        else:
+        else: 
             print("USUÁRIO OU SENHA INCORRETO!")
             return False
-    else:
-        print("USUÁRIO OU SENHA INCORRETO!")
-        return False
-    
+    except:
+        print("USUÁRIO OU SENHA INCORRETA!!")
 
