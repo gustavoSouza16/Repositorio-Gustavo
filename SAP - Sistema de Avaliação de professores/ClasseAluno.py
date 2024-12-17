@@ -2,7 +2,6 @@ from ClasseUsuario import *
 from datetime import datetime
 
 class Aluno(UsuarioIfro):
-
     def __init__(self, nome, idade, login_usuario,login_senha,ano_escolar, curso):
         super().__init__(nome, idade, login_usuario,login_senha)
         self.__ano_escolar = ano_escolar
@@ -20,28 +19,47 @@ class Aluno(UsuarioIfro):
     def set_curso(self, novo_curso):
         self.__curso = novo_curso
         
-    def cadastrar(self):
-        while True:
-            nome = input("Digite seu nome: ")
+    def cadastrar(self):    
+        try:                # Utilização dos comandos de exceção 
+            nome = input("Insira seu nome: ")
             self.set_nome(nome)
-            idade = int(input("Digite sua idade:"))
+
+            idade = int(input("Insira sua idade:"))
+            if idade <= 0:
+                raise ValueError('A idade precisa ser um número positivo, portanto, maior que 0.')
             self.set_idade(idade)
+
+        except AttributeError:
+            print('Esse atributo não é aceito, insira um valor válido.')    #Inserção do comando de exceção caso o atributo esteja errado.
+
+        except Exception:
+            print('Ocorreu um erro inesperado, tente inserir sua idade com números.')           #Inserção do comando de exceção caso algum erro não esperado ocorra.
+
+        else:
+            print('Cadastro realizado com sucesso.')
+
+
             login_usuario = input("Cadastre um usuário: ")
-            self.set_login_usuario(login_usuario)
+            self.set_login_usuario(login_usuario)       
+
             login_senha = input("Cadastre uma senha: ")
             self.set_login_senha(login_senha)
-            self.__ano_escolar = input("Qual sua série?\n[1] - Primeiro ano\n[2] - Segundo ano\n[3] - Terceiro ano\n> ")
-            if self.__ano_escolar != "1" and self.__ano_escolar != "2" and self.__ano_escolar != "3":
-                print ("Coloque uma resposta válida.")
-                continue
-            print ("Digite seu curso o nome do seu curso:\nInformática\nQuímica\nEdificações\nEletrotécnica")
-            self.__curso = input("Coloque sua resposta: ").upper()
-            if self.__curso != 'INFORMÁTICA' and self.__curso != 'QUÍMICA' and self.__curso != 'EDIFICAÇÕES' and  self.__curso != 'ELETROTÉCNICA':
-                print ("Coloque uma opção válida")
-                continue
-            else:
-                print ("Cadastro Finalizado")
-                break
+
+            while True:
+                self.__ano_escolar = input("Qual sua série?\n[1] - Primeiro ano\n[2] - Segundo ano\n[3] - Terceiro ano\n> ")
+                if self.__ano_escolar == "1" or self.__ano_escolar == "2" or self.__ano_escolar == "3":
+                    break  
+                else:
+                    print("Coloque uma resposta válida.")
+            
+            while True:
+                print("Digite o nome do seu curso:\nInformática\nQuímica\nEdificações\nEletrotécnica")
+                self.__curso = input("Coloque sua resposta: ").upper()
+                if self.__curso in ['INFORMÁTICA', 'QUÍMICA', 'EDIFICAÇÕES', 'ELETROTÉCNICA']:
+                    break  
+                else:
+                    print("Coloque uma opção válida.")
+                
                 
     def escreverAvaliacao(self):
         avalicacao_escrita = input("Escreva sua avaliação\n> ")
