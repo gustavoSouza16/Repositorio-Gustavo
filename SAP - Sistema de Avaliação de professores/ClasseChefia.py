@@ -38,7 +38,7 @@ class ChefiaImediata(UsuarioIfro):
             except:
                 print("Coloque a idade utilizando números")
                 continue
-                                    #ACRESCENTAR TRY EXCEPT
+                                    
             self.set_idade(idade)
             login_usuario = input("Cadastre um usuário: ")
             self.set_login_usuario(login_usuario)
