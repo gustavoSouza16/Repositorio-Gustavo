@@ -29,16 +29,16 @@ try:
         def cadastrar(self):
             while True:
                 try:
-                    nome = str(input("Digite seu nome: "))
+                    nome = str(input("Digite seu nome:"))
                     self.set_nome(nome)
                     
                     idade = input("Digite sua idade:")
                     self.set_idade(idade)
 
-                    login_usuario = input("Cadastre um usuário: ")
+                    login_usuario = input("Cadastre um usuário:")
                     self.set_login_usuario(login_usuario)
 
-                    login_senha = input("Cadastre uma senha: ")
+                    login_senha = input("Cadastre uma senha:")
                     self.set_login_senha(login_senha)
 
                     self.__ano_escolar = input("Qual sua série?\n[1] - Primeiro ano\n[2] - Segundo ano\n[3] - Terceiro ano\n> ")
@@ -60,6 +60,8 @@ try:
                 except ValueError:
                     print("Insira um número, sendo este do tipo inteiro.")
                     print("Reiniciando o processo...")
+                finally:
+                    print("Este é o SAP - Sistema de Avaliação de Professores!")
 
         def escreverAvaliacao(self):
             try:

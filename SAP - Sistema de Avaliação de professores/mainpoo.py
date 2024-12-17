@@ -17,15 +17,10 @@ def VasculharNomeProfessor():
 
 mural = Mural()
 while True:
-    try:
-        print("-" * 12, "MENU DO SAP", "-" * 12)
-        print("\n1 - Cadastrar Usuário\n2 - Logar com uma conta\n3 - Sair")
-        opcao = input(">")
-        if opcao != "1" or  opcao != "2" or opcao != "3":
-            raise StrError
-    except StrError:
-        print("Apenas Número inteiros entre 1 e 3.")
-    
+    print("-" * 12, "MENU DO SAP", "-" * 12)
+    print("\n1 - Cadastrar Usuário\n2 - Logar com uma conta\n3 - Sair")
+    opcao = input(">")
+
     if opcao == "1":
         print("\nCadastrar como:\n[1] - Aluno\n[2] - Professor\n[3] - Chefia Imediata")
         cadastrar_usuario = input("Coloque sua resposta:\n> ")

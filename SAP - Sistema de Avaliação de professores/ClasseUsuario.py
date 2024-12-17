@@ -20,6 +20,7 @@ class UsuarioIfro(ABC):
         return self.__idade
         
     def set_idade(self, idade):
+        idade = idade.strip()
         if not str(idade).isdigit():
             raise ValueError()
         self.idade = int(idade)
