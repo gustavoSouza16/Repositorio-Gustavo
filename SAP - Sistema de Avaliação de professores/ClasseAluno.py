@@ -29,6 +29,15 @@ class Aluno(UsuarioIfro):
                 raise ValueError('A idade precisa ser um número positivo, portanto, maior que 0.')
             self.set_idade(idade)
 
+        except AttributeError:
+            print('Esse atributo não é aceito, insira um valor válido.')    #Inserção do comando de exceção caso o atributo esteja errado.
+
+        except Exception:
+            print('Ocorreu um erro inesperado, tente inserir sua idade com números.')           #Inserção do comando de exceção caso algum erro não esperado ocorra.
+
+        else:
+            print('Cadastro realizado com sucesso.')
+
 
             login_usuario = input("Cadastre um usuário: ")
             self.set_login_usuario(login_usuario)       
@@ -51,11 +60,6 @@ class Aluno(UsuarioIfro):
                 else:
                     print("Coloque uma opção válida.")
                 
-
-        except ValueError as e:         # Utilização dos comandos de exceção 
-            print(f'Erro:{e}')
-        finally:                        # Utilização dos comandos de exceção 
-            print('Cadastro concluído!')
                 
     def escreverAvaliacao(self):
         avalicacao_escrita = input("Escreva sua avaliação\n> ")
