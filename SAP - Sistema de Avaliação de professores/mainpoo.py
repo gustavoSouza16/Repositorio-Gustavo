@@ -36,9 +36,9 @@ while True:
             dicionario_de_profs_cadastrados[criar_usuario_obj.get_login_usuario()] = f"{criar_usuario_obj.get_nome()}", criar_usuario_obj.get_idade(), f"{criar_usuario_obj.get_login_usuario()}", f"{criar_usuario_obj.get_login_senha()}", criar_usuario_obj.get_salario() , f"{criar_usuario_obj.get_disciplina_ministrada()}"
             print(f"Você foi cadastrado {criar_usuario_obj.get_nome()}")
         elif cadastrar_usuario == "3":
-            criar_usuario_obj = ChefiaImediata(0,0,0,0,0)
+            criar_usuario_obj = ChefiaImediata(0,0,0,0,0,0)
             criar_usuario_obj.cadastrar()
-            dicionario_de_chefia[criar_usuario_obj.get_login_usuario()] = f"{criar_usuario_obj.get_nome()}", criar_usuario_obj.get_idade(), f"{criar_usuario_obj.get_login_usuario()}", f"{criar_usuario_obj.get_login_senha()}", f"{criar_usuario_obj.get_email()}"
+            dicionario_de_chefia[criar_usuario_obj.get_login_usuario()] = f"{criar_usuario_obj.get_nome()}", criar_usuario_obj.get_idade(), f"{criar_usuario_obj.get_login_usuario()}", f"{criar_usuario_obj.get_login_senha()}", criar_usuario_obj.get_idChefia() , f"{criar_usuario_obj.get_email()}"
             print(f"Você foi cadastrado {criar_usuario_obj.get_nome()}")
         else:
             print("Coloque uma resposta válida")
@@ -101,7 +101,7 @@ while True:
                 viwer = input("[1] - Revisar avaliações\n[2] - Retornar ao menu")   
                 if viwer == "1":
                     chefia = dicionario_de_chefia[login_usuario]
-                    chefiaIm = ChefiaImediata(chefia[0],chefia[1],chefia[2],chefia[3],chefia[4])
+                    chefiaIm = ChefiaImediata(chefia[0],chefia[1],chefia[2],chefia[3],chefia[4],chefia[5])
                     for i, ItemsAvaliacao in enumerate(AvaliacoesAndamento, start=1):
                         ItemsAvaliacao.set_idAvaliacao(i)
                         print ("-"*100,f"\n\n{ItemsAvaliacao.gerarAvaliacao()}","-"*100)
