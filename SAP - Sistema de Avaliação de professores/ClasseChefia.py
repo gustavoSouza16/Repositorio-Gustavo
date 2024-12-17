@@ -10,6 +10,9 @@ class ChefiaImediata(UsuarioIfro):
     def get_idChefia(self):
         return self.__idChefia
 
+    def set_idChefia(self, novoID):
+        self.__IdChefia = novoID
+
     def get_email(self):
         return self.__email
 
