@@ -1,5 +1,7 @@
 from ClasseUsuario import *
 from datetime import datetime
+from ErrorFunctions import *
+
 
 class Aluno(UsuarioIfro):
 
@@ -26,13 +28,19 @@ class Aluno(UsuarioIfro):
             self.set_nome(nome)
             try:
                 idade = int(input("Digite sua idade:"))
-            except:
+            except ValueError:
                 print("Coloque a idade utilizando números")
                 continue                                                              
             self.set_idade(idade)
             login_usuario = input("Cadastre um usuário: ")
             self.set_login_usuario(login_usuario)
-            login_senha = input("Cadastre uma senha: ")                                     #Acrescentar um raise que, caso a senha seja menor que 8 caracteres, vai levantar um erro (Raise).
+            while True:
+                login_senha = input("Cadastre uma senha: ")
+                try :
+                    TamanhoError(login_senha)
+                    break
+                except OverflowError:
+                    continue
             self.set_login_senha(login_senha)
             self.__ano_escolar = input("Qual sua série?\n[1] - Primeiro ano\n[2] - Segundo ano\n[3] - Terceiro ano\n> ") #MUDAR PARA NÚMEROS AO INVÉS DE STRINGS DE NÚMEROS E TRY EXCET
             if self.__ano_escolar != "1" and self.__ano_escolar != "2" and self.__ano_escolar != "3":
