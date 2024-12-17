@@ -42,7 +42,7 @@ class ChefiaImediata(UsuarioIfro):
             self.set_idade(idade)
             login_usuario = input("Cadastre um usuário: ")
             self.set_login_usuario(login_usuario)
-            login_senha = input("Cadastre uma senha: ")
+            login_senha = input("Cadastre uma senha: ")                                #Acrescentar um raise que, caso a senha seja menor que 8 caracteres, vai levantar um erro (Raise).
             self.set_login_senha(login_senha)
             email = input("Digite seu email: ")
             self.set_email(email)
