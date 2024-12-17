@@ -39,8 +39,8 @@ class Professor(UsuarioIfro):
                 idade = int(input("Digite sua idade:"))
                 break
             except ValueError:
-                print("Ops! Parece que você inseriu um valor inválido. Por favor, insira um número inteiro.aaaaaaaaaaaaaaaaa")
-                
+                print("Ops! Parece que você inseriu um valor inválido. Por favor, insira um número inteiro.")
+
 
         
         login_usuario = input("Cadastre um usuário: ")
