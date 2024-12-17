@@ -57,9 +57,12 @@ try:
                 except NumError:
                     print("O nome não pode conter números, caracteres como virgula ou pontos e espaços em branco.") 
                     
-                except ValueError:
+                except StrError:
                     print("Insira um número, sendo este do tipo inteiro.")
                     print("Reiniciando o processo...")
+
+                finally:
+                    print("Parabéns! Você cadastrou um usuário.")
                 
 
         def escreverAvaliacao(self):

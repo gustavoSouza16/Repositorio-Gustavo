@@ -19,6 +19,8 @@ class UsuarioIfro(ABC):
         return self.__idade
         
     def set_idade (self, idade):
+         if not idade.isdigit():
+             raise StrError("Sem Letras!!!!")
          self.__idade = idade
          
     def get_login_usuario(self):
