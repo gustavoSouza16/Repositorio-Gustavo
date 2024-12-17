@@ -7,6 +7,7 @@ from datetime import datetime
 from ClasseMural import*
 from ClasseChefia import *
 from ClasseProfessor import*
+from ErrorFunctions import *
 
 class Professor(UsuarioIfro):
     def __init__(self, nome, idade, login_usuario,login_senha, salario, disciplina_ministrada):
@@ -35,19 +36,25 @@ class Professor(UsuarioIfro):
             self.set_nome(nome)
             try:
                 idade = int(input("Digite sua idade:"))
-            except:
+            except ValueError:
                 print("Coloque a idade utilizando números")
-                continue                                          
+                continue                                         
             self.set_idade(idade)
             login_usuario = input("Cadastre um usuário: ")
             self.set_login_usuario(login_usuario)
-            login_senha = input("Cadastre uma senha: ")                        #Acrescentar um raise que, caso a senha seja menor que 8 caracteres, vai levantar um erro (Raise).
+            while True:
+                login_senha = input("Cadastre uma senha: ")
+                try :
+                    TamanhoError(login_senha)
+                    break
+                except OverflowError:
+                    continue
             self.set_login_senha(login_senha)
             try:
-                salario = int(input("Digite seu salário: "))
-            except:
+                salario = float(input("Digite seu salário: "))
+            except ValueError:
                 print("Coloque a idade utilizando números")                    
-                continue                                    
+                continue                                     
             self.set_salario(salario)
             disciplina_ministrada = input("Digite a disciplina que você ministra: ")
             self.set_disciplina_ministrada(disciplina_ministrada)
