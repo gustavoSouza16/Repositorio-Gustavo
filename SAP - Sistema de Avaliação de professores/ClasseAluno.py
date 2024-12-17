@@ -43,17 +43,24 @@ class Aluno(UsuarioIfro):
                     continue
             self.set_login_senha(login_senha)
             self.__ano_escolar = input("Qual sua série?\n[1] - Primeiro ano\n[2] - Segundo ano\n[3] - Terceiro ano\n> ") #MUDAR PARA NÚMEROS AO INVÉS DE STRINGS DE NÚMEROS E TRY EXCET
-            if self.__ano_escolar != "1" and self.__ano_escolar != "2" and self.__ano_escolar != "3":
-                print ("Coloque uma resposta válida.")
-                continue
-            print ("Digite seu curso o nome do seu curso:\nInformática\nQuímica\nEdificações\nEletrotécnica")
-            self.__curso = input("Coloque sua resposta: ").upper()
-            if self.__curso != 'INFORMÁTICA' and self.__curso != 'QUÍMICA' and self.__curso != 'EDIFICAÇÕES' and  self.__curso != 'ELETROTÉCNICA':
-                print ("Coloque uma opção válida")
-                continue
-            else:
-                print ("Cadastro Finalizado")
-                break
+            while True:
+                try:
+                    self.__ano_escolar = int(input("Qual sua série?\n[1] - Primeiro ano\n[2] - Segundo ano\n[3] - Terceiro ano\n> ")) 
+                    if self.__ano_escolar != 1 and self.__ano_escolar != 2 and self.__ano_escolar != 3:
+                        print ("Coloque uma resposta válida.")
+                        continue
+                    print ("Digite seu curso o nome do seu curso:\nInformática\nQuímica\nEdificações\nEletrotécnica")
+                    self.__curso = input("Coloque sua resposta: ").upper()
+                    if self.__curso != 'INFORMÁTICA' and self.__curso != 'QUÍMICA' and self.__curso != 'EDIFICAÇÕES' and  self.__curso != 'ELETROTÉCNICA':
+                        print ("Coloque uma opção válida")
+                        continue
+                    else:
+                        print ("Cadastro Finalizado")
+                        break
+                except ValueError:
+                    print("Coloque uma opção válida (Número)")
+                    continue
+            break
                 
     def escreverAvaliacao(self):
         avalicacao_escrita = input("Escreva sua avaliação\n> ")
