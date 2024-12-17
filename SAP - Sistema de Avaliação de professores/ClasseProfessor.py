@@ -41,11 +41,14 @@ class Professor(UsuarioIfro):
                 break
             except ValueError:
                 print("Ops! Parece que você inseriu um valor inválido. Por favor, insira um número inteiro.")
+            
+    
 
 
         
         login_usuario = input("Cadastre um usuário: ")
         self.set_login_usuario(login_usuario)
+
         login_senha = input("Cadastre uma senha: ")
         self.set_login_senha(login_senha)
         
@@ -60,6 +63,17 @@ class Professor(UsuarioIfro):
 
         disciplina_ministrada = input("Digite a disciplina que você ministra: ")
         self.set_disciplina_ministrada(disciplina_ministrada)
+
+        #Exceção para a disciplina ministrada
+        while True:
+            try:
+                disciplina_ministrada = input("Digite a disciplina que você ministra: ")
+                self.set_disciplina_ministrada(disciplina_ministrada)
+                break
+            except ValueError:
+                print("Parece que você colocou um valor inválido")
+            finally:
+                print("Seja bem vindo ao SAP")
 
     def visualizarMural(self,mural):
         mural.consultarAvaliacao()                                                              #Associação

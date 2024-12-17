@@ -17,12 +17,17 @@ class UsuarioIfro(ABC):
         return self.__idade
         
     def set_idade (self, idade):
+        if idade < 18:
+            raise ErroIdade
+        if idade > 100:
+            raise ErroIdade
         self.__idade = idade
         
     def get_login_usuario(self):
         return self.__login_usuario
         
     def set_login_usuario(self, novo_login):
+        novo_login.strip()
         self.__login_usuario = novo_login
         
     def get_login_senha(self):
