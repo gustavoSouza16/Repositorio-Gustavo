@@ -5,15 +5,16 @@ class ChefiaImediata(UsuarioIfro):
     def __init__(self, nome, idade, login_usuario,login_senha, email):
         super().__init__(nome, idade, login_usuario,login_senha)
         self.__email = email
+        self.__idChefia = None
 
     def get_idChefia(self):
         return self.__idChefia
 
-    def get_email(self):
-        return self.__email
-
     def set_idChefia(self, novoID):
         self.__idChefia = novoID
+
+    def get_email(self):
+        return self.__email
 
     def set_email(self, novoEmail):
         self.__email = novoEmail
@@ -32,12 +33,14 @@ class ChefiaImediata(UsuarioIfro):
     def cadastrar(self):
         nome = input("Digite seu nome: ")
         self.set_nome(nome)
-        idade = int(input("Digite sua idade:"))
+        idade = int(input("Digite sua idade: "))
         self.set_idade(idade)
         login_usuario = input("Cadastre um usuário: ")
         self.set_login_usuario(login_usuario)
         login_senha = input("Cadastre uma senha: ")
         self.set_login_senha(login_senha)
         email = input("Digite seu email: ")
-        self.set_email(email)
+        self.set_email(email)  
+        self.set_idChefia(randint(1000, 9999))  
+        print(f"Chefia imediata cadastrada com ID: {self.get_idChefia()}")
        
