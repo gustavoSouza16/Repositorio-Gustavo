@@ -17,9 +17,14 @@ def VasculharNomeProfessor():
 
 mural = Mural()
 while True:
-    print("-" * 12, "MENU DO SAP", "-" * 12)
-    print("\n1 - Cadastrar Usuário\n2 - Logar com uma conta\n3 - Sair")
-    opcao = input(">")
+    try:
+        print("-" * 12, "MENU DO SAP", "-" * 12)
+        print("\n1 - Cadastrar Usuário\n2 - Logar com uma conta\n3 - Sair")
+        opcao = input(">")
+        if opcao != "1" or  opcao != "2" or opcao != "3":
+            raise ValueError
+    except ValueError:
+        print("Apenas Número inteiros entre 1 e 3.")
     
     if opcao == "1":
         print("\nCadastrar como:\n[1] - Aluno\n[2] - Professor\n[3] - Chefia Imediata")
@@ -35,7 +40,7 @@ while True:
             dicionario_de_profs_cadastrados[criar_usuario_obj.get_login_usuario()] = f"{criar_usuario_obj.get_nome()}", criar_usuario_obj.get_idade(), f"{criar_usuario_obj.get_login_usuario()}", f"{criar_usuario_obj.get_login_senha()}", criar_usuario_obj.get_salario() , f"{criar_usuario_obj.get_disciplina_ministrada()}"
             print(f"Você foi cadastrado {criar_usuario_obj.get_nome()}")
         elif cadastrar_usuario == "3":
-            criar_usuario_obj = ChefiaImediata(0,0,0,0,0)
+            criar_usuario_obj = ChefiaImediata(0,0,0,0,0,0)
             criar_usuario_obj.cadastrar()
             dicionario_de_chefia[criar_usuario_obj.get_login_usuario()] = f"{criar_usuario_obj.get_nome()}", criar_usuario_obj.get_idade(), f"{criar_usuario_obj.get_login_usuario()}", f"{criar_usuario_obj.get_login_senha()}", criar_usuario_obj.get_idChefia() , f"{criar_usuario_obj.get_email()}"
             print(f"Você foi cadastrado {criar_usuario_obj.get_nome()}")
@@ -102,7 +107,7 @@ while True:
             login_senha = input("Coloque sua senha para login:")
             op = logar(login_usuario, login_senha, dicionario_de_chefia)
             if op == True:
-                viwer = input("[1] - Revisar avaliações\n[2] - Retornar ao menu")   
+                viwer = input("[1] - Revisar avaliações\n[2] - Retornar ao menu\n>")   
                 if viwer == "1":
                     chefia = dicionario_de_chefia[login_usuario]
                     chefiaIm = ChefiaImediata(chefia[0],chefia[1],chefia[2],chefia[3],chefia[4],chefia[5])

@@ -10,10 +10,11 @@ class UsuarioIfro(ABC):
     def get_nome (self):
         return self.__nome
         
-    def set_nome(self,nome):
-         if not nome.isalpha():
-            raise NumError("O nome não pode conter números!")
-         self.__nome = nome
+    def set_nome(self, nome):
+        nome = nome.strip()
+        if nome.isdigit():
+            raise NumError()
+        self.__nome = nome
 
     def get_idade(self):
         return self.__idade

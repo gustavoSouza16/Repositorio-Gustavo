@@ -55,7 +55,7 @@ try:
                         break
                     
                 except NumError:
-                    print("O nome não pode conter números, caracteres como virgula ou pontos e espaços em branco.") 
+                    print("O nome não pode conter números.") 
                     
                 except ValueError:
                     print("Insira um número, sendo este do tipo inteiro.")

@@ -2,9 +2,10 @@ from ClasseUsuario import*
 from random import *
 
 class ChefiaImediata(UsuarioIfro):
-    def __init__(self, nome, idade, login_usuario,login_senha, email):
+    def __init__(self, nome, idade, login_usuario,login_senha, email, idChefia):
         super().__init__(nome, idade, login_usuario,login_senha)
         self.__email = email
+        self.__idChefia = idChefia
 
     def get_idChefia(self):
         return self.__idChefia
@@ -53,7 +54,7 @@ class ChefiaImediata(UsuarioIfro):
                 print("Reiniciando o processo...")
             
             except NumError:
-                print("O nome não pode conter números, caracteres como virgula ou pontos e espaços em branco.")
+                print("O nome não pode conter números.")
             
             except ValueError:
                 print("Sua idade não pode conter Letras, caracteres como virgula ou pontos e espaços em branco.")
