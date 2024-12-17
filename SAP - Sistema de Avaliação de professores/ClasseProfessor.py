@@ -49,7 +49,7 @@ class Professor(UsuarioIfro):
         login_senha = input("Cadastre uma senha: ")
         self.set_login_senha(login_senha)
         
-        #Exceção para salário
+        #Exceção para salárioooooo
         while True:     
             try:
                 salario = int(input("Digite seu salário: "))
