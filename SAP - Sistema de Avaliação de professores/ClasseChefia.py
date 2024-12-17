@@ -6,14 +6,8 @@ class ChefiaImediata(UsuarioIfro):
         super().__init__(nome, idade, login_usuario,login_senha)
         self.__email = email
 
-    def get_idChefia(self):
-        return self.__idChefia
-
     def get_email(self):
         return self.__email
-
-    def set_idChefia(self, novoID):
-        self.__idChefia = novoID
 
     def set_email(self, novoEmail):
         self.__email = novoEmail
