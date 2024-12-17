@@ -16,4 +16,3 @@ def logar(login_usuario, login_senha, dicionario):
         print("USUÁRIO OU SENHA INCORRETO!")
         return False
     
-

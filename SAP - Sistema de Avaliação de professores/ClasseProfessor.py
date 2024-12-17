@@ -30,51 +30,19 @@ class Professor(UsuarioIfro):
         self.__disciplina_ministrada = nova_disciplina
 
     def cadastrar(self):
-        try:
-            nome = input("Insira seu nome: ")
-            self.set_nome(nome)
-            
-            idade = int(input("Insira sua idade:"))
-            if idade <= 0:
-                raise ValueError('A idade precisa ser um número positivo, portanto, maior que 0.')          #Tratamento de exceção caso o valor seja negativo utilizando o Raise
-            self.set_idade(idade)
-
-
-            login_usuario = input("Cadastre um usuário: ")
-            self.set_login_usuario(login_usuario)
-
-            login_senha = input("Cadastre uma senha: ")
-            self.set_login_senha(login_senha)
-
-            salario = int(input("Insira seu salário: "))
-            if salario <= 0:
-                raise ValueError('Seu salário precisa ser um número positivo, portanto, maior que 0.')      #Tratamento de exceção caso o valor seja negativo utilizando o Raise
-            self.set_salario(salario)
-
-            disciplina_ministrada = input("Digite a disciplina que você ministra: ")
-            self.set_disciplina_ministrada(disciplina_ministrada)
-
-        except ValueError:                      
-            print('Esse valor não é aceito, insira um valor válido.')       #Inserção do comando de exceção caso o valor esteja errado.
-
-        except AttributeError:
-            print('Esse atributo não é aceito, insira um valor válido.')    #Inserção do comando de exceção caso o atributo esteja errado.
-
-        except Exception:
-            print('Ocorreu um erro inesperado, tente novamente.')           #Inserção do comando de exceção caso algum erro não esperado ocorra.
-
-        else:
-            print('Cadastro realizado com sucesso.')
+        nome = input("Digite seu nome: ")
+        self.set_nome(nome)
+        idade = int(input("Digite sua idade:"))
+        self.set_idade(idade)
+        login_usuario = input("Cadastre um usuário: ")
+        self.set_login_usuario(login_usuario)
+        login_senha = input("Cadastre uma senha: ")
+        self.set_login_senha(login_senha)
+        salario = int(input("Digite seu salário: "))
+        self.set_salario(salario)
+        disciplina_ministrada = input("Digite a disciplina que você ministra: ")
+        self.set_disciplina_ministrada(disciplina_ministrada)
 
     def visualizarMural(self,mural):
-        try:
-            mural.consultarAvaliacao()          #Associação
-        except AttributeError:   
-            print('Esse atributo não é aceito, insira um valor válido.')     #Inserção do comando de exceção caso o valor esteja errado.
-        except Exception:
-            print('Ocorreu um erro ao tentar visualizar o mural.')           #Inserção do comando de exceção caso algum erro não esperado ocorra.
-        finally:
-            print('Finalizando a consulta no mural.')   
-                                                                 
+        mural.consultarAvaliacao()                                                              #Associação
         
-

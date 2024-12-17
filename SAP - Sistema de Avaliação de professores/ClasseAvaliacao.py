@@ -38,19 +38,11 @@ class Avaliacao:
         self.__destinatarioAvaliacao = destinatarioAvaliacao
 
     def gerarAvaliacao(self):
-        try:                                         #Utilização de um comando de tratamento de exceção
-            if not self.__idAvaliacao or not self.__remetenteAvaliacao or not self.__destinatarioAvaliacao:
-                raise ValueError("A avaliação não pode ser gerada devido à falta de informações essenciais.")
-            return (f"{self.__get_idAvaliacao()}{self.__get_remetenteAvaliacao()}{self.__get_destinatarioAvaliacao()}{self.__get_respostaAvaliacao()}")
-        except ValueError:                           #Utilização de um comando de tratamento de exceção
-            print('Ocorreu um erro: informações necessárias estão faltando.')
-        except Exception:                            #Utilização de um comando de tratamento de exceção
-            print('Ocorreu um erro ao gerar a avaliação.')
+        return (f"{self.__get_idAvaliacao()}{self.__get_remetenteAvaliacao()}{self.__get_destinatarioAvaliacao()}{self.__get_respostaAvaliacao()}")
 
     def consultarStatus(self):
         if self.__status == None:
             print ("A avaliação ainda não foi revisado.\nStatus: Em Andamento")
         else:
             print (f"Status da avaliação: {self.__status}")
-
 

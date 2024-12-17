@@ -10,8 +10,6 @@ from ClasseMural import*
 from ClasseChefia import *
 from ClasseProfessor import*
 
-dicionario_de_chefia = {}
-
 def VasculharNomeProfessor():
     for professores in dicionario_de_profs_cadastrados:
         professor = dicionario_de_profs_cadastrados[professores]
@@ -31,19 +29,16 @@ while True:
             criar_usuario_obj.cadastrar()
             dicionario_de_usuario_alunos_cadastrados[criar_usuario_obj.get_login_usuario()] = f"{criar_usuario_obj.get_nome()}", (criar_usuario_obj.get_idade()), f"{criar_usuario_obj.get_login_usuario()}", f"{criar_usuario_obj.get_login_senha()}", f"{criar_usuario_obj.get_ano_escolar()}", f"{criar_usuario_obj.get_curso()}"
             print(f"Você foi cadastrado {criar_usuario_obj.get_nome()}")
-
         elif cadastrar_usuario == "2":
             criar_usuario_obj = Professor(0,0,0,0,0,0)
             criar_usuario_obj.cadastrar()
             dicionario_de_profs_cadastrados[criar_usuario_obj.get_login_usuario()] = f"{criar_usuario_obj.get_nome()}", criar_usuario_obj.get_idade(), f"{criar_usuario_obj.get_login_usuario()}", f"{criar_usuario_obj.get_login_senha()}", criar_usuario_obj.get_salario() , f"{criar_usuario_obj.get_disciplina_ministrada()}"
             print(f"Você foi cadastrado {criar_usuario_obj.get_nome()}")
-
         elif cadastrar_usuario == "3":
-            criar_usuario_obj = ChefiaImediata(0,0,0,0,0)
+            criar_usuario_obj = ChefiaImediata(0,0,0,0,0,0)
             criar_usuario_obj.cadastrar()
             dicionario_de_chefia[criar_usuario_obj.get_login_usuario()] = f"{criar_usuario_obj.get_nome()}", criar_usuario_obj.get_idade(), f"{criar_usuario_obj.get_login_usuario()}", f"{criar_usuario_obj.get_login_senha()}", criar_usuario_obj.get_idChefia() , f"{criar_usuario_obj.get_email()}"
             print(f"Você foi cadastrado {criar_usuario_obj.get_nome()}")
-            
         else:
             print("Coloque uma resposta válida")
        
@@ -133,4 +128,3 @@ while True:
     elif opcao == "3":
         print("Bem, Adeus")
         break
-

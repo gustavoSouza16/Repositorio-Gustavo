@@ -35,3 +35,4 @@ class UsuarioIfro(ABC):
     
     def cadastrar ():
         pass
+
