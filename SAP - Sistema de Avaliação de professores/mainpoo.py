@@ -101,7 +101,7 @@ while True:
                 viwer = input("[1] - Revisar avaliações\n[2] - Retornar ao menu")   
                 if viwer == "1":
                     chefia = dicionario_de_chefia[login_usuario]
-                    chefiaIm = ChefiaImediata(chefia[0],chefia[1],chefia[2],chefia[3],chefia[4],chefia[5])
+                    chefiaIm = ChefiaImediata(chefia[0],chefia[1],chefia[2],chefia[3],chefia[4])
                     for i, ItemsAvaliacao in enumerate(AvaliacoesAndamento, start=1):
                         ItemsAvaliacao.set_idAvaliacao(i)
                         print ("-"*100,f"\n\n{ItemsAvaliacao.gerarAvaliacao()}","-"*100)
