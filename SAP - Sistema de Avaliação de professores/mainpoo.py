@@ -57,14 +57,20 @@ while True:
                     Aluno_logado = Aluno (usuario[0],usuario[1],usuario[2],usuario[3],usuario[4],usuario[5])
                     usuario_profs = [professor for professor in dicionario_de_profs_cadastrados.keys()]
                     print (usuario_profs)
-                    DadoProfessor = input("Por favor, coloque o usuário do professor a quem deseja avaliar\n>") 
-                    Professor1 = dicionario_de_profs_cadastrados[DadoProfessor]
+                    while True:
+                        DadoProfessor = input("Por favor, coloque o usuário do professor a quem deseja avaliar\n>") 
+                        try: 
+                            Professor1 = dicionario_de_profs_cadastrados[DadoProfessor]
+                        except KeyError:
+                            print ("Escreva corretamente")
+                            continue
+                        break
                     ProfessorCitado = Professor(Professor1[0],Professor1[1],Professor1[2],Professor1[3],Professor1[4],Professor1[5])
                 elif opcao_escrever == "2":
                     continue
                 else:                                     
                     continue
-                if DadoProfessor not in usuario_profs:                                            #TALVEZ DÊ PARA REMOVER UTILIZANDO O TRY EXCEPT NO DICIONÁRIO, ITEM A SER OBSERVADO
+                if DadoProfessor not in usuario_profs:                                            
                     print ("Coloque uma resposta válida")
                     continue
                 else:
