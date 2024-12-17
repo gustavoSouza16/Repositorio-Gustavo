@@ -1,5 +1,6 @@
 from ClasseUsuario import*
 from random import *
+from ErrorFunctions import *
 
 class ChefiaImediata(UsuarioIfro):
     def __init__(self, nome, idade, login_usuario,login_senha, email, IDChefia):
